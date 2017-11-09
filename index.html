@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Welcome to the Mars Photo Project!</h1>
+            </div>
+        </div>
+        <div class="row">
+            <form onsubmit="app.controllers.nasaCtrl.newSol(event)">
+                <div class="form-group col-xs-4">
+                    <label for="sol">SOL (day on mars)</label>
+                    <input type="number" class="form-control" name="sol" placeholder="100">
+                    <button type "submit">Search</button>
+
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <form onsubmit="app.controllers.nasaCtrl.camFilter(event)">
+                <div class="form-group col-xs-4">
+                    <label for="camera">Camera</label>
+                    <!-- dropdwon here -->
+                    <select name="camera" class="form-control">
+                        <option value="FHAZ">FFront Hazard Avoidance Camera</option>
+                        <option value="RHAZ">Rear Hazard Avoidance Camera</option>
+                        <option value="MAST">Mast Camera</option>
+                        <option value="CHEMCAM">Chemistry and Camera Complex</option>
+                        <option value="MAHLI">Mars Hand Lens Imager </option>
+                        <option value="MARDI">Mars Descent Imager </option>
+                        <option value="NAVCAM">Navigation Camera </option>
+
+
+                    </select>
+                    <button type "submit">Filter Images</button>
+
+                </div>
+            </form>
+        </div>
+        <div class="row" id="gallery">
+            <!-- <div class="col-sm-6 col-md-4">
+                <div class="thumbnail">
+                    <img src="//placehold.it/200x200">
+                    <div class="caption">
+                        <h3>Camera Name</h3>
+                        <p>earth date</p>
+                    </div>
+                </div>
+            </div> -->
+
+        </div>
+
+
+
+    </div>
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="app/nasa/nasa-service.js"></script>
+    <script src="app/nasa/nasa-controller.js"></script>
+    <script src="app/init.js"></script>
+</body>
+
+</html>
